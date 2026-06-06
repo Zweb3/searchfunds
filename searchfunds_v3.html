@@ -1,0 +1,370 @@
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',-apple-system,'Segoe UI',sans-serif;background:#fff;color:#1a1a2e;line-height:1.6;-webkit-font-smoothing:antialiased;}
+a{text-decoration:none;color:inherit;}
+.wrap{max-width:1140px;margin:0 auto;padding:0 40px;}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;background:#00338D;color:#fff;font-size:14px;font-weight:600;letter-spacing:.3px;border:none;cursor:pointer;transition:background .2s;}
+.btn-primary:hover{background:#002671;}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;background:transparent;color:#fff;font-size:14px;font-weight:600;letter-spacing:.3px;border:1.5px solid rgba(255,255,255,.35);cursor:pointer;transition:all .2s;}
+.btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.1);}
+.btn-outline{display:inline-flex;align-items:center;gap:8px;padding:11px 24px;background:transparent;color:#00338D;font-size:14px;font-weight:600;border:1.5px solid #00338D;cursor:pointer;transition:all .2s;}
+.btn-outline:hover{background:#00338D;color:#fff;}
+.label{font-size:11px;letter-spacing:3px;text-transform:uppercase;font-weight:600;color:#00338D;}
+
+/* NAV */
+header{background:#fff;border-bottom:1px solid #e8e8e8;position:sticky;top:0;z-index:99;}
+nav{display:flex;align-items:center;justify-content:space-between;height:72px;}
+.logo-wrap{display:flex;align-items:center;gap:14px;}
+.logo-mark{width:44px;height:44px;background:#00338D;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:14px;letter-spacing:.5px;}
+.logo-text{font-size:15px;font-weight:700;color:#1a1a2e;}
+.nav-links{display:flex;gap:36px;font-size:13px;font-weight:500;}
+.nav-links a{color:#555;transition:color .2s;letter-spacing:.2px;}
+.nav-links a:hover{color:#00338D;}
+
+/* HERO */
+.hero{background:#00338D;color:#fff;padding:100px 0 88px;}
+.hero-inner{display:grid;grid-template-columns:1fr 360px;gap:72px;align-items:center;}
+.hero-eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:22px;font-weight:600;}
+.hero h1{font-size:52px;font-weight:800;line-height:1.1;letter-spacing:-1px;margin-bottom:24px;color:#fff;}
+.hero h1 em{color:#F0641E;font-style:normal;}
+.hero-desc{font-size:16px;color:rgba(255,255,255,.72);line-height:1.85;max-width:500px;margin-bottom:40px;}
+.hero-cta{display:flex;gap:16px;flex-wrap:wrap;}
+.stat-box{border:1px solid rgba(255,255,255,.15);padding:40px 36px;display:flex;flex-direction:column;gap:0;}
+.stat-item{padding:24px 0;border-bottom:1px solid rgba(255,255,255,.1);}
+.stat-item:first-child{padding-top:0;}
+.stat-item:last-child{border-bottom:none;padding-bottom:0;}
+.stat-num{font-size:38px;font-weight:800;color:#fff;letter-spacing:-1.5px;line-height:1;}
+.stat-num em{color:#F0641E;font-style:normal;font-size:24px;}
+.stat-lbl{font-size:12px;color:rgba(255,255,255,.45);letter-spacing:.5px;margin-top:6px;text-transform:uppercase;}
+
+/* MISSION */
+.mission{padding:88px 0;border-bottom:1px solid #eee;}
+.mission-inner{max-width:760px;}
+.mission h2{font-size:36px;font-weight:800;color:#1a1a2e;letter-spacing:-.5px;margin:14px 0 22px;line-height:1.2;}
+.mission p{font-size:17px;color:#555;line-height:1.9;}
+.rule{width:48px;height:3px;background:#F0641E;margin-top:24px;}
+
+/* WHO */
+.who{padding:80px 0;background:#F5F6FA;}
+.section-head{margin-bottom:48px;}
+.section-head h2{font-size:34px;font-weight:800;color:#1a1a2e;letter-spacing:-.5px;margin-top:12px;}
+.cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:#ddd;}
+.card{background:#fff;padding:40px 36px;display:flex;flex-direction:column;}
+.card.blue{background:#00338D;}
+.card-n{font-size:11px;letter-spacing:3px;text-transform:uppercase;font-weight:600;margin-bottom:28px;color:#bbb;}
+.card.blue .card-n{color:rgba(255,255,255,.35);}
+.card-ico{width:40px;height:40px;background:#EEF2FB;display:flex;align-items:center;justify-content:center;margin-bottom:20px;font-size:18px;color:#00338D;}
+.card.blue .card-ico{background:rgba(255,255,255,.12);color:#fff;}
+.card h3{font-size:18px;font-weight:700;color:#1a1a2e;margin-bottom:12px;}
+.card.blue h3{color:#fff;}
+.card p{font-size:14px;color:#666;line-height:1.8;flex:1;margin-bottom:28px;}
+.card.blue p{color:rgba(255,255,255,.65);}
+.card-cta{font-size:13px;font-weight:700;color:#00338D;display:inline-flex;align-items:center;gap:6px;}
+.card.blue .card-cta{color:#fff;}
+.card-cta::after{content:"→";}
+
+/* METHOD */
+.method{padding:80px 0;}
+.method-head{margin-bottom:52px;}
+.method-head h2{font-size:34px;font-weight:800;color:#1a1a2e;letter-spacing:-.5px;margin-top:12px;}
+.steps{display:grid;grid-template-columns:repeat(5,1fr);border-top:2px solid #00338D;}
+.step{padding:32px 24px 32px 0;}
+.step:not(:last-child){border-right:1px solid #e8e8e8;}
+.step:not(:first-child){padding-left:24px;}
+.step-n{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#00338D;font-weight:700;margin-bottom:14px;}
+.step h4{font-size:16px;font-weight:700;color:#1a1a2e;margin-bottom:8px;}
+.step p{font-size:13px;color:#777;line-height:1.7;}
+
+/* SERVICES */
+.services{padding:80px 0;background:#F5F6FA;}
+.svc-inner{display:grid;grid-template-columns:260px 1fr;gap:80px;align-items:start;}
+.svc-left h2{font-size:32px;font-weight:800;color:#1a1a2e;letter-spacing:-.5px;margin-top:12px;line-height:1.3;}
+.svc-left p{font-size:15px;color:#666;margin-top:18px;line-height:1.8;}
+.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:#ddd;}
+.svc{background:#fff;padding:32px 28px;}
+.svc-bar{width:32px;height:3px;background:#F0641E;margin-bottom:20px;}
+.svc h4{font-size:16px;font-weight:700;color:#1a1a2e;margin-bottom:10px;}
+.svc p{font-size:13px;color:#777;line-height:1.75;margin-bottom:20px;}
+.svc-lnk{font-size:13px;font-weight:600;color:#00338D;display:inline-flex;align-items:center;gap:5px;}
+.svc-lnk::after{content:"→";}
+
+/* REPORT */
+.report{padding:80px 0;border-top:1px solid #eee;}
+.report-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+.rep-cover{background:#00338D;padding:52px 44px;position:relative;overflow:hidden;}
+.rep-cover::after{content:"";position:absolute;bottom:-20px;right:-20px;width:100px;height:100px;background:#F0641E;}
+.rep-tag{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.4);font-weight:600;margin-bottom:36px;}
+.rep-cover h3{font-size:22px;font-weight:800;line-height:1.5;color:#fff;position:relative;z-index:1;}
+.rep-cover .rep-by{font-size:12px;color:rgba(255,255,255,.35);margin-top:36px;letter-spacing:.5px;}
+.rep-text h2{font-size:28px;font-weight:800;color:#1a1a2e;letter-spacing:-.3px;margin:14px 0 18px;line-height:1.35;}
+.rep-text p{font-size:15px;color:#666;line-height:1.85;margin-bottom:32px;}
+
+/* CTA */
+.cta{background:#1a1a2e;padding:80px 0;}
+.cta-inner{display:flex;justify-content:space-between;align-items:center;gap:48px;}
+.cta-left h2{font-size:34px;font-weight:800;color:#fff;letter-spacing:-.5px;line-height:1.2;}
+.cta-left h2 em{color:#F0641E;font-style:normal;}
+.cta-left p{font-size:15px;color:rgba(255,255,255,.5);margin-top:14px;max-width:460px;line-height:1.8;}
+.cta-btns{display:flex;gap:14px;flex-shrink:0;}
+
+/* FOOTER */
+footer{background:#00338D;padding:56px 0 0;}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.1);}
+.foot-brand .foot-logo{display:flex;align-items:center;gap:12px;}
+.foot-logo-mark{width:40px;height:40px;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;color:#fff;}
+.foot-logo-text{font-size:15px;font-weight:700;color:#fff;}
+.foot-brand p{font-size:13px;color:rgba(255,255,255,.45);margin-top:18px;max-width:300px;line-height:1.9;}
+.foot-col h5{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.35);font-weight:600;margin-bottom:20px;}
+.foot-col a{display:block;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:12px;transition:color .2s;}
+.foot-col a:hover{color:#fff;}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;padding:20px 0;font-size:12px;color:rgba(255,255,255,.28);}
+
+.fade-up{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease;}
+.fade-up.vis{opacity:1;transform:none;}
+@media(max-width:900px){
+  .hero-inner,.svc-inner,.report-inner,.cta-inner,.foot-grid{grid-template-columns:1fr;}
+  .stat-box{display:none;}
+  .steps{grid-template-columns:1fr 1fr;}
+  .cards-grid,.svc-grid{grid-template-columns:1fr;}
+}
+</style>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <div class="logo-wrap">
+        <div class="logo-mark">SF</div>
+        <div>
+          <div class="logo-text">SearchFunds</div>
+        </div>
+      </div>
+      <div class="nav-links">
+        <a href="#mission">关于我们</a>
+        <a href="#who">服务对象</a>
+        <a href="#method">方法论</a>
+        <a href="#services">服务</a>
+        <a href="#report">报告</a>
+        <a href="#contact">联系</a>
+      </div>
+      <a class="btn-primary" href="#contact" style="padding:10px 22px;font-size:13px;">申请评估</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-eyebrow">Search Funds · M&A · AI Transformation</div>
+        <h1>收购传统企业，<br/>升级为 <em>AI</em> 时代公司</h1>
+        <p class="hero-desc">用产业情报、并购方法与落地增长方案，帮助有现金流的企业完成数字化与产品化改造。</p>
+        <div class="hero-cta">
+          <a class="btn-primary" href="#contact">申请免费评估</a>
+          <a class="btn-ghost" href="#mission">了解我们</a>
+        </div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-item">
+          <div class="stat-num">5<em>步</em></div>
+          <div class="stat-lbl">从情报到增长的完整链路</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">3<em>类</em></div>
+          <div class="stat-lbl">投资人 · 企业主 · 搜索者</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">4<em>项</em></div>
+          <div class="stat-lbl">核心专业服务</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="mission fade-up" id="mission">
+  <div class="wrap">
+    <div class="mission-inner">
+      <div class="label">我们的使命 / Our Mission</div>
+      <h2>帮助有真实现金流的企业<br/>穿越 AI 周期</h2>
+      <p>我们相信，AI 与具身智能不会只改造科技公司，更会重塑家居、消费与制造等传统行业。我们的使命，是帮助有真实现金流的企业完成转型升级，也帮助投资人与创业者获得可经营的优质资产。</p>
+      <div class="rule"></div>
+    </div>
+  </div>
+</section>
+
+<section class="who fade-up" id="who">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="label">服务对象 / Who We Serve</div>
+      <h2>我们服务三种人</h2>
+    </div>
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-n">01</div>
+        <div class="card-ico"><i class="ti ti-trending-up" aria-hidden="true"></i></div>
+        <h3>投资人 / Investors</h3>
+        <p>获取经过产业情报筛选的并购机会，加入投资人名单，共同评估具备稳定现金流与升级潜力的标的。</p>
+        <a class="card-cta" href="#contact">加入投资人名单</a>
+      </div>
+      <div class="card blue">
+        <div class="card-n">02</div>
+        <div class="card-ico"><i class="ti ti-building-skyscraper" aria-hidden="true"></i></div>
+        <h3>企业主 / Business Owners</h3>
+        <p>申请免费企业升级诊断。无论你考虑出售、融资还是转型，我们提供品牌、电商、AI 改造与资本方案。</p>
+        <a class="card-cta" href="#contact">申请免费诊断</a>
+      </div>
+      <div class="card">
+        <div class="card-n">03</div>
+        <div class="card-ico"><i class="ti ti-search" aria-hidden="true"></i></div>
+        <h3>搜索者 / Searchers</h3>
+        <p>通过搜索基金模式，寻找并经营一家真实企业，而不是从零创业。我们提供辅导与项目配对。</p>
+        <a class="card-cta" href="#contact">成为搜索者</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="method fade-up" id="method">
+  <div class="wrap">
+    <div class="method-head">
+      <div class="label">方法论 / Methodology</div>
+      <h2>从情报到增长的完整链路</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-n">01 — 发现</div>
+        <h4>目标筛选</h4>
+        <p>基于产业情报与数据库，精准筛选收购标的</p>
+      </div>
+      <div class="step">
+        <div class="step-n">02 — 评估</div>
+        <h4>尽职调查</h4>
+        <p>企业诊断、估值初筛与深度尽调</p>
+      </div>
+      <div class="step">
+        <div class="step-n">03 — 并购</div>
+        <h4>交易执行</h4>
+        <p>交易结构、股权架构设计与谈判</p>
+      </div>
+      <div class="step">
+        <div class="step-n">04 — 升级</div>
+        <h4>改造落地</h4>
+        <p>品牌、电商、AI 工具与供应链改造</p>
+      </div>
+      <div class="step">
+        <div class="step-n">05 — 增长</div>
+        <h4>价值提升</h4>
+        <p>持续运营、估值提升与退出路径</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services fade-up" id="services">
+  <div class="wrap">
+    <div class="svc-inner">
+      <div class="svc-left">
+        <div class="label">核心服务 / Services</div>
+        <h2>四项专业服务</h2>
+        <p>从诊断到并购，从改造到增长，覆盖全链路的专业支持，帮助企业完成 AI 时代的转型。</p>
+        <a class="btn-outline" href="#contact" style="margin-top:32px;">了解全部服务</a>
+      </div>
+      <div class="svc-grid">
+        <div class="svc">
+          <div class="svc-bar"></div>
+          <h4>企业升级诊断</h4>
+          <p>4 周深度诊断，交付 30 页完整报告与 90 天改造路线图。</p>
+          <a class="svc-lnk" href="#contact">了解更多</a>
+        </div>
+        <div class="svc">
+          <div class="svc-bar"></div>
+          <h4>标的筛选服务</h4>
+          <p>为投资人与搜索者提供细分行业的收购标的地图与分析。</p>
+          <a class="svc-lnk" href="#contact">了解更多</a>
+        </div>
+        <div class="svc">
+          <div class="svc-bar"></div>
+          <h4>搜索基金辅导</h4>
+          <p>从搜索主题到投资人 BP 的全流程搭建与辅导支持。</p>
+          <a class="svc-lnk" href="#contact">了解更多</a>
+        </div>
+        <div class="svc">
+          <div class="svc-bar"></div>
+          <h4>并购改造顾问</h4>
+          <p>尽调、交易、品牌与 AI 升级的落地执行全程顾问。</p>
+          <a class="svc-lnk" href="#contact">了解更多</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="report fade-up" id="report">
+  <div class="wrap">
+    <div class="report-inner">
+      <div class="rep-cover">
+        <div class="rep-tag">白皮书 · 2024</div>
+        <h3>AI 与具身智能时代，<br/>中国家居企业的<br/>收购与升级机会</h3>
+        <div class="rep-by">SearchFunds Research</div>
+      </div>
+      <div class="rep-text">
+        <div class="label">最新报告 / Latest Report</div>
+        <h2>解析家居行业并购窗口与智能化机遇</h2>
+        <p>深度分析家居行业并购窗口期与智能家居趋势，以及 AI 如何系统性重塑设计、客服、电商与供应链环节。</p>
+        <a class="btn-primary" href="#contact">免费下载报告</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta fade-up" id="contact">
+  <div class="wrap">
+    <div class="cta-inner">
+      <div class="cta-left">
+        <h2>让你的企业<br/>进入 <em>AI</em> 时代</h2>
+        <p>预约一次产业交流，或提交企业信息申请评估。我们的专业团队将在 48 小时内回复。</p>
+      </div>
+      <div class="cta-btns">
+        <a class="btn-primary" href="mailto:contact@searchfunds.com">申请评估</a>
+        <a class="btn-ghost" href="mailto:contact@searchfunds.com">预约交流</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="foot-logo">
+          <div class="foot-logo-mark">SF</div>
+          <div class="foot-logo-text">SearchFunds</div>
+        </div>
+        <p>收购传统企业，升级为 AI 时代公司。我们结合产业情报、并购经验与落地增长方案，帮助企业持续创造长期价值。</p>
+      </div>
+      <div class="foot-col">
+        <h5>站点</h5>
+        <a href="#mission">关于我们</a>
+        <a href="#who">服务对象</a>
+        <a href="#services">核心服务</a>
+        <a href="#report">研究报告</a>
+        <a href="#contact">联系我们</a>
+      </div>
+      <div class="foot-col">
+        <h5>联系方式</h5>
+        <a href="mailto:contact@searchfunds.com">contact@searchfunds.com</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2024 SearchFunds. All rights reserved.</span>
+      <span>专业 · 严谨 · 长期主义</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis');});},{threshold:.1});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+</script>
